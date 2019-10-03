@@ -3,10 +3,9 @@ import java.util.*;
 
 public class ReadFile {
 
-    public static void main(String[] args) throws FileNotFoundException {
+    static Map<String, String> readMature(){
 
         Map<String, String> mature = new HashMap<String, String>();
-        Map<String, String> hairpin = new HashMap<String, String>();
 
         try (Scanner sc = new Scanner(new File("mature.fa"))) {
             while (sc.hasNextLine()) {
@@ -17,8 +16,14 @@ public class ReadFile {
                     mature.put(name, mirna);
                 }
             }
-            System.out.print(mature);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         }
+        return mature;
+    }
+
+    static Map<String, String> readPin(){
+        Map<String, String> hairpin = new HashMap<String, String>();
 
         try (Scanner sc = new Scanner(new File("hairpin.fa"))) {
             while (sc.hasNextLine()) {
@@ -31,7 +36,9 @@ public class ReadFile {
                     hairpin.put(name, hairpinrna);
                 }
             }
-            System.out.print(hairpin);
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
         }
+        return hairpin;
     }
 }
