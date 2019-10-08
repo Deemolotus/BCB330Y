@@ -11,7 +11,7 @@ public class Main {
     public static void main(String[] args){
         for (String key: hairpin.keySet()) {
 //            result.put(key, a.motif(hairpin.get(key),get from software));
-              result.put(key, a.motif("1234567890", "(((...)).)"));
+              result.put(key, a.allMotif("1234567890", "(((...)).)"));
         }
         System.out.println(result);
     }
