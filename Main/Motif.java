@@ -29,24 +29,26 @@ class Motif {
                     return mot.toString();
                 }
             }
-            j = miRNA.length() - 1;
 
+            i = 0;
+            j = miRNA.length() - 1;
             if (dotForm.charAt(j) == '.') {
                 while(dotForm.charAt(j) != ')' ) {
                     down.append(miRNA.charAt(j));
                     j--;
-                    if(i == j + 1){
+                    if(i == j - 1){
                         break;
                     }
                 }
-                if (j - i > 0) {
-                    dotForm = dotForm.substring(i,j);
-                    miRNA = miRNA.substring(i,j);
+                if (miRNA.length() > 0) {
+                    dotForm = dotForm.substring(0,j + 1);
+                    miRNA = miRNA.substring(0,j + 1);
                 }
                 mot.append("/").append(down);
                 down.setLength(0);
             }
 
+            i = 0;
             j = dotForm.length() - 1;
             if (dotForm.charAt(i) == '(') {
                 if (dotForm.charAt(j) == ')') {
