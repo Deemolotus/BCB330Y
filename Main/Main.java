@@ -10,7 +10,7 @@ public class Main {
 
     public static void main(String[] args){
         for (String key: RNA.keySet()) {
-            result.put(key, a.motif(RNA.get(key),dot.get(key)));
+            result.put(key, a.motifMaker(a.motif(RNA.get(key),dot.get(key))));
         }
         System.out.println(result);
     }

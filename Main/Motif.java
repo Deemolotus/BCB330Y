@@ -5,7 +5,7 @@ class Motif {
     private StringBuilder down = new StringBuilder();
     private StringBuilder middle = new StringBuilder();
 
-    String motif(String miRNA, String dotForm) {
+    StringBuilder motif(String miRNA, String dotForm) {
 
         while(miRNA.length() != 0) {
             int i = 0;
@@ -26,7 +26,7 @@ class Motif {
                 mot.append(up);
                 up.setLength(0);
                 if(miRNA.length() - i == 0){
-                    return mot.toString();
+                    return mot;
                 }
             }
 
@@ -60,6 +60,22 @@ class Motif {
                 }
             }
         }
-        return mot.toString();
+        return mot;
+    }
+
+    String motifMaker(StringBuilder hairPin){
+        int i = 0;
+        while(i < hairPin.length()) {
+            if (hairPin.charAt(i) == '(') {
+                if (i != 0 && hairPin.charAt(i - 1) == ')'){
+                    if (hairPin.charAt(i + 4) == '(') {
+                        hairPin.replace(i, i + 4,"");
+                        i = i -1;
+                    }
+                }
+            }
+            i ++;
+        }
+        return hairPin.toString();
     }
 }
