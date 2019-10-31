@@ -1,16 +1,27 @@
 #!/usr/bin/env bash
+cd ./RNAstructure
 make AllSub
 make ct2dot
 
-echo Please Enter the filename and structure Number:
+echo Please Enter the filename:
 
 read -p 'Filename: ' fn
-read -p 'Structure Number: ' sn
 
-cd exe
+rm ./splited/*.fa
+rm ./splited/*.ct
+rm ./splited/*.dot
 
-rm *.ct
-rm *.dot
+split -l 3 ./$fn.fa ./splited/$fn.fa
 
-./AllSub $fn mature.ct
-./ct2dot mature.ct $sn mature.dot
+for file in ./splited/*
+do
+    mv "$file" "$file.fa"
+done
+
+for file in ./splited/*.fa
+do
+    ./exe/AllSub "$file" "$file.ct"
+    ./exe/ct2dot "$file.ct" 1 "$file.dot"
+done
+
+cat ./splited/*.dot >> $fn.dot
