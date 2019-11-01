@@ -1,16 +1,16 @@
 class Motif {
 
-    private StringBuilder mot = new StringBuilder();
-    private StringBuilder up = new StringBuilder();
-    private StringBuilder down = new StringBuilder();
-    private StringBuilder middle = new StringBuilder();
-
     StringBuilder motif(String miRNA, String dotForm) {
 
+        StringBuilder mot = new StringBuilder();
+        StringBuilder up = new StringBuilder();
+        StringBuilder down = new StringBuilder();
+        StringBuilder middle = new StringBuilder();
+
         while(miRNA.length() != 0) {
+
             int i = 0;
             int j = miRNA.length() - 1;
-
             if (dotForm.charAt(i) == '.') {
                 while(dotForm.charAt(i) != '(') {
                     up.append(miRNA.charAt(i));
@@ -64,6 +64,7 @@ class Motif {
     }
 
     String motifMaker(StringBuilder hairPin){
+
         int i = 0;
         while(i < hairPin.length()) {
             if (hairPin.charAt(i) == '(') {
@@ -75,6 +76,39 @@ class Motif {
                 }
             }
             i ++;
+        }
+
+        i = 0;
+        while(i < hairPin.length()){
+            if (hairPin.charAt(i) == '/' && hairPin.charAt(i - 1) == ')'){
+                hairPin.insert(i, '-');
+            }
+            if (hairPin.charAt(i) == ')' && hairPin.charAt(i + 1) != '('){
+                int j = i + 1;
+                int count  = 0;
+                while(j < hairPin.length() && hairPin.charAt(j) != '('){
+                    if (hairPin.charAt(j) == '/'){
+                        count++;
+                        j++;
+                    }
+                    j++;
+                    if (j == hairPin.length() - 1){
+                        count++;
+                    }
+                }
+                if (count == 0) {
+                    hairPin.insert(j, "/-");
+                }
+            }
+            i ++;
+        }
+
+        for (int j = 0; j < hairPin.length(); j++) {
+            if (hairPin.charAt(j) == ')'){
+                if (hairPin.charAt(j + 1) == '('){
+                    hairPin.insert(j + 1, "\n");
+                }
+            }
         }
         return hairPin.toString();
     }
