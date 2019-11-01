@@ -1,11 +1,11 @@
 class Motif {
 
-    private StringBuilder mot = new StringBuilder();
-    private StringBuilder up = new StringBuilder();
-    private StringBuilder down = new StringBuilder();
-    private StringBuilder middle = new StringBuilder();
-
     StringBuilder motif(String miRNA, String dotForm) {
+
+        StringBuilder mot = new StringBuilder();
+        StringBuilder up = new StringBuilder();
+        StringBuilder down = new StringBuilder();
+        StringBuilder middle = new StringBuilder();
 
         while(miRNA.length() != 0) {
             int i = 0;
@@ -75,6 +75,13 @@ class Motif {
                 }
             }
             i ++;
+        }
+        for (int j = 0; j < hairPin.length(); j++) {
+            if (hairPin.charAt(j) == ')'){
+                if (hairPin.charAt(j + 1) == '('){
+                    hairPin.insert(j + 1, "----");
+                }
+            }
         }
         return hairPin.toString();
     }
