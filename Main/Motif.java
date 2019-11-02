@@ -74,13 +74,22 @@ class Motif {
                         i = i -1;
                     }
                 }
+                if(i == 0){
+                    if (hairPin.charAt(i + 4) == '(') {
+                        hairPin.replace(i, i + 4,"");
+                        i = i -1;
+                    }
+                }
             }
             i ++;
         }
 
         i = 0;
         while(i < hairPin.length()){
-            if (hairPin.charAt(i) == '/' && hairPin.charAt(i - 1) == ')'){
+            if (i == 0 && hairPin.charAt(i) == '/'){
+                hairPin.insert(i,'-');
+            }
+            else if (hairPin.charAt(i) == '/' && hairPin.charAt(i - 1) == ')'){
                 hairPin.insert(i, '-');
             }
             if (hairPin.charAt(i) == ')' && hairPin.charAt(i + 1) != '('){
