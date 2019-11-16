@@ -44,6 +44,7 @@ class Motif {
                     dotForm = dotForm.substring(0,j + 1);
                     miRNA = miRNA.substring(0,j + 1);
                 }
+                down.reverse();
                 mot.append("/").append(down);
                 down.setLength(0);
             }
