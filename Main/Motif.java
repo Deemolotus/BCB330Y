@@ -112,7 +112,19 @@ class Motif {
             }
             i ++;
         }
+        StringBuilder hairPins = motifMakeHelper(hairPin);
+        return hairPins.toString();
+    }
 
+    private StringBuilder motifMakeHelper(StringBuilder hairPin){
+
+        for (int j = 0; j < hairPin.length(); j++) {
+            if (hairPin.charAt(j) == ')'){
+                if (j - 4 >= 0 && hairPin.charAt(j - 4) != ')' && hairPin.charAt(j + 1) != '('){
+                    hairPin.insert(j + 1, hairPin.substring(j - 3, j + 1));
+                }
+            }
+        }
         for (int j = 0; j < hairPin.length(); j++) {
             if (hairPin.charAt(j) == ')'){
                 if (hairPin.charAt(j + 1) == '('){
@@ -120,6 +132,6 @@ class Motif {
                 }
             }
         }
-        return hairPin.toString();
+        return hairPin;
     }
 }
