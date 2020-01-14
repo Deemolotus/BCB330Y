@@ -8,13 +8,7 @@ echo Please Enter the filename:
 
 read -p 'Filename: ' fn
 
-split -l 2 ./$fn.fa ./splited/$fn
-
-#Rename file to .fa format
-for file in ./splited/*
-do
-    mv "$file" "$file.fa"
-done
+awk '/>/{close(x);x="S"++i".fa";}{print > x;}' fn.fa
 
 for file in ./splited/*.fa
 do
