@@ -71,7 +71,7 @@ public class Main {
 
         label:
         while (true) {
-            System.out.println("Enter 1 for input motif，or enter 2 for input miRNA name, enter q to exit : ");
+            System.out.println("Enter 1 for input motif，enter 2 for input miRNA name, or enter q to exit : ");
             String number = myObj.nextLine();  // Read user input
             switch (number) {
                 case "1":
