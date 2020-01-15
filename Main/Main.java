@@ -78,6 +78,7 @@ public class Main {
                     System.out.println("Please Enter a motif : ");
                     number = myObj.nextLine();
                     number = number.toUpperCase();
+//                    System.out.println(fix);
                     for (String key : result.keySet()) {
                         if (result.get(key).contains(number)) {
                             makeString.append(key).append("\n");
@@ -88,6 +89,9 @@ public class Main {
                         if (key.equals(number)) {
                             makeString.append(fix).append(status.get(key));
                         }
+                    }
+                    if (!makeString.toString().contains(fix)){
+                        makeString.setLength(0);
                     }
                     if (makeString.length() == 0) {
                         System.out.println("No such motif");
