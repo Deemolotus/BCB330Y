@@ -1,17 +1,14 @@
-import java.io.BufferedWriter;
-import java.io.FileWriter;
-import java.io.IOException;
+import java.io.*;
 import java.util.*;
 
 public class Main {
 
-    private static final Map<String, String> RNA = ReadFile.readRNA();
-    private static final Map<String, String> dot = ReadFile.readDot();
     private static Map<String, String> result = new HashMap<>();
     private static Map<String, Integer> status = new HashMap<>();
     private static Motif a = new Motif();
 
-    private static void makeDictionary(){
+    public static void makeDictionary(Map<String, String> RNA, Map<String, String> dot){
+
         for (String key: RNA.keySet()) {
             result.put(key, a.motifMaker(a.motif(RNA.get(key),dot.get(key))));
         }
@@ -37,9 +34,8 @@ public class Main {
                 }
             }
         });
-
-        //System.out.println(result);
     }
+
     private static void writeToFile() throws IOException {
         int num = result.size();
         int count = 0;
@@ -154,8 +150,10 @@ public class Main {
 //        });
 //
 //        //System.out.println(result);
-
-        makeDictionary();
+        File dotFile = new File("hairpin.dot");
+        Map<String, String> RNA = ReadFile.readRNA(dotFile);
+        Map<String, String> dot = ReadFile.readDot(dotFile);
+        makeDictionary(RNA, dot);
 //        int num = result.size();
 //        int count = 0;
 //        FileWriter stream = new FileWriter("motif.txt");

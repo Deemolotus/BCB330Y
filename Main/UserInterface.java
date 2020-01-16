@@ -1,11 +1,12 @@
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
+import javafx.stage.*;
 import javafx.collections.FXCollections;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
-import java.io.IOException;
+import java.io.File;
+import java.util.Map;
+
 
 public class UserInterface {
 
@@ -18,12 +19,21 @@ public class UserInterface {
     @FXML
     private TextArea resultDisplay = new TextArea();
 
+    @FXML
+    private Button chooserButton = new Button();
+
+    private FileChooser fileChooser = new FileChooser();
+
     public void initialize() {
         Selection.setValue("mRNA");
         Selection.getItems().addAll(FXCollections.observableArrayList("mRNA","Motif"));
 
         resultDisplay.setEditable(false);
         resultDisplay.setText("Result Shows Here");
+
+        fileChooser.setInitialFileName("hairpin.dot");
+        fileChooser.getExtensionFilters().addAll(
+                new FileChooser.ExtensionFilter("Dot Files", "*.dot"));
 
         setBackground();
     }
@@ -58,7 +68,19 @@ public class UserInterface {
                 resultDisplay.setText(searchResult.toString());
             }
         }
+    }
 
+    public void fileChooserOnAction(){
+        File selectedFile = fileChooser.showOpenDialog(null);
+        if (selectedFile != null){
+            resultDisplay.setText("Loading " + selectedFile.getName());
 
+            Map<String, String> RNA = ReadFile.readRNA(selectedFile);
+            Map<String, String> dot = ReadFile.readDot(selectedFile);
+            Main.makeDictionary(RNA, dot);
+
+        } else {
+            resultDisplay.setText("File selection cancelled.");
+        }
     }
 }

@@ -2,9 +2,10 @@ import java.io.*;
 import java.util.*;
 
 class ReadFile {
-    static Map<String, String> readDot(){
+
+    static Map<String, String> readDot(File dotFile){
         Map<String, String> dotDot = new HashMap<>();
-        try (Scanner sc = new Scanner(new File("hairpin.dot"))) {
+        try (Scanner sc = new Scanner(dotFile)) {
             while (sc.hasNextLine()) {
                 String line = sc.nextLine().trim();
                 if (line.charAt(0) == '>') {
@@ -14,14 +15,15 @@ class ReadFile {
                     dotDot.put(name, real);
                 }
             }
-        } catch (FileNotFoundException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return dotDot;
     }
-    static Map<String, String> readRNA(){
+
+    static Map<String, String> readRNA(File dotFile){
         Map<String, String> dotRna = new HashMap<>();
-        try (Scanner sc = new Scanner(new File("hairpin.dot"))) {
+        try (Scanner sc = new Scanner(dotFile)) {
             while (sc.hasNextLine()) {
                 String line = sc.nextLine().trim();
                 if (line.charAt(0) == '>') {
@@ -30,7 +32,7 @@ class ReadFile {
                     dotRna.put(name, mirna);
                 }
             }
-        } catch (FileNotFoundException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return dotRna;

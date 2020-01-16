@@ -12,5 +12,6 @@
       <TextField fx:id="UserInput" layoutX="135.0" layoutY="173.0" />
       <ChoiceBox fx:id="Selection" layoutX="47.0" layoutY="173.0" prefHeight="27.0" prefWidth="80.0" />
       <TextArea fx:id="resultDisplay" layoutX="47.0" layoutY="212.0" prefHeight="141.0" prefWidth="312.0" />
+      <Button fx:id="chooserButton" layoutX="292.0" layoutY="359.0" mnemonicParsing="false" onAction="#fileChooserOnAction" text="Load File" />
    </children>
 </AnchorPane>

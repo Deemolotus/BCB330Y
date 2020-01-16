@@ -2,6 +2,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -24,6 +25,7 @@ public class GraphicMain extends Application {
         primaryStage.setResizable(false);
         primaryStage.show();
         primaryStage.setTitle("mRNABase");
+
 
         //Loading Login Page
         FXMLLoader loginLoader = new FXMLLoader(getClass().getResource("UserInterface.fxml"));
