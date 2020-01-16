@@ -68,64 +68,64 @@ public class Main {
         n_out.close();
     }
 
-    private static void options(){
+    public static StringBuilder options(String type, String input){
+
         StringBuilder makeString = new StringBuilder();
         String fix = "Num motif in human miRNA: ";
-        Scanner myObj = new Scanner(System.in);  // Create a Scanner object
+        //Scanner myObj = new Scanner(System.in);  // Create a Scanner object
+        //System.out.println("Enter 1 for input motif，enter 2 for input miRNA name, or enter q to exit : ");
+       // String number = myObj.nextLine();  // Read user input
 
-        label:
-        while (true) {
-            System.out.println("Enter 1 for input motif，enter 2 for input miRNA name, or enter q to exit : ");
-            String number = myObj.nextLine();  // Read user input
-            switch (number) {
-                case "1":
-                    System.out.println("Please Enter a motif : ");
-                    number = myObj.nextLine();
-                    number = number.toUpperCase();
-//                    System.out.println(fix);
-                    for (String key : result.keySet()) {
-                        if (result.get(key).contains(number)) {
-                            makeString.append(key).append("\n");
-                        }
-                    }
+        if (input.length() <= 0){ //If invalid input
+            type = "null";
+        }
 
-                    for (String key : status.keySet()) {
-                        if (key.equals(number)) {
-                            makeString.append(fix).append(status.get(key));
-                        }
+        switch (type) {
+            case "Motif":
+                //System.out.println("Please Enter a motif : ");
+                input = input.toUpperCase();
+
+                for (String key : result.keySet()) {
+                    if (result.get(key).contains(input)) {
+                        makeString.append(key).append("\n");
                     }
-                    if (!makeString.toString().contains(fix)){
-                        makeString.setLength(0);
+                }
+
+                for (String key : status.keySet()) {
+                    if (key.equals(input)) {
+                        makeString.append(fix).append(status.get(key));
                     }
-                    if (makeString.length() == 0) {
-                        System.out.println("No such motif");
-                    }
-                    System.out.println(makeString);
+                }
+
+                if (!makeString.toString().contains(fix)){
                     makeString.setLength(0);
-                    break;
-                case "2":
-                    System.out.println("Please Enter a miRNA : ");
-                    number = myObj.nextLine();
-                    number = number.toLowerCase();
-                    for (String key : result.keySet()) {
-                        if (key.contains(number)) {
-                            makeString.append(result.get(key)).append("\n");
-                        }
+                }
+
+                if (makeString.length() == 0) {
+                    return null;
+                }
+                return makeString;
+
+            case "mRNA":
+                System.out.println("Please Enter a miRNA : ");
+
+                input = input.toLowerCase();
+                for (String key : result.keySet()) {
+                    if (key.contains(input)) {
+                        makeString.append(result.get(key)).append("\n");
                     }
-                    if (makeString.length() == 0) {
-                        System.out.println("No such miRNA");
-                    }
-                    System.out.println(makeString);
-                    makeString.setLength(0);
-                    break;
-                case "q":
-                    break label;
-                default:
-                    System.out.println("Please enter a valid number");
-                    break;
-            }
+                }
+                if (makeString.length() == 0) {
+                    return null;
+                }
+                return makeString;
+            //case "q":
+            //  break label;
+            default:
+                return null; //Invalid input
         }
     }
+
 
     public static void main(String[] args) throws IOException {
 //        for (String key: RNA.keySet()) {
@@ -185,7 +185,11 @@ public class Main {
 
 //        StringBuilder makeString = new StringBuilder();
 //        String fix = "Num motif in human miRNA: ";
-//        Scanner myObj = new Scanner(System.in);  // Create a Scanner object
+        System.out.println("Enter 1 for input motif，enter 2 for input miRNA name, or enter q to exit : ");
+        Scanner myObj = new Scanner(System.in);  // Create a Scanner object
+        String type = myObj.nextLine();  // Read user input
+        System.out.println("Please Enter Sequence");
+        String input = myObj.nextLine();  // Read user input
 //
 //        label:
 //        while (true) {
@@ -196,7 +200,7 @@ public class Main {
 //                    System.out.println("Please Enter a motif : ");
 //                    number = myObj.nextLine();
 //                    number = number.toUpperCase();
-////                    System.out.println(fix);
+//                  System.out.println(fix);
 //                    for (String key : result.keySet()) {
 //                        if (result.get(key).contains(number)) {
 //                            makeString.append(key).append("\n");
@@ -239,6 +243,6 @@ public class Main {
 //                    break;
 //            }
 //        }
-        options();
+        options(type, input);
     }
 }
