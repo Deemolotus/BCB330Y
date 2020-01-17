@@ -19,14 +19,11 @@ public class UserInterface {
     @FXML
     private TextArea resultDisplay = new TextArea();
 
-    @FXML
-    private Button chooserButton = new Button();
-
     private FileChooser fileChooser = new FileChooser();
 
     public void initialize() {
-        Selection.setValue("mRNA");
-        Selection.getItems().addAll(FXCollections.observableArrayList("mRNA","Motif"));
+        Selection.setValue("miRNA");
+        Selection.getItems().addAll(FXCollections.observableArrayList("miRNA","Motif"));
 
         resultDisplay.setEditable(false);
         resultDisplay.setText("Result Shows Here");
