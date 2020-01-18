@@ -107,7 +107,7 @@ public class Main {
 
                 input = input.toLowerCase();
                 for (String key : result.keySet()) {
-                    if (key.contains(input)) {
+                    if (key.toLowerCase().contains(input)) {
                         makeString.append(result.get(key)).append("\n");
                     }
                 }
