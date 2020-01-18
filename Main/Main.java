@@ -7,7 +7,7 @@ public class Main {
     private static Map<String, Integer> status = new HashMap<>();
     private static Motif a = new Motif();
 
-    public static void makeDictionary(Map<String, String> RNA, Map<String, String> dot){
+    static void makeDictionary(Map<String, String> RNA, Map<String, String> dot){
 
         for (String key: RNA.keySet()) {
             result.put(key, a.motifMaker(a.motif(RNA.get(key),dot.get(key))));

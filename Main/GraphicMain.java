@@ -2,14 +2,13 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.layout.BorderPane;
-import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
 public class GraphicMain extends Application {
 
-    public static BorderPane root;
+    static BorderPane root;
 
     public static void main(String[] args) {
         launch(args);
