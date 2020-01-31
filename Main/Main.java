@@ -5,6 +5,7 @@ public class Main {
 
     private static Map<String, String> result = new HashMap<>();
     private static Map<String, Integer> status = new HashMap<>();
+    private static Map<String, String> leftover = new HashMap<>();
     private static Motif a = new Motif();
 
     static void makeDictionary(Map<String, String> RNA, Map<String, String> dot){
@@ -50,8 +51,8 @@ public class Main {
         out.close();
 
         int nu = status.size();
-        System.out.println(status.size());
-        System.out.println(status);
+//        System.out.println(status.size());
+//        System.out.println(status);
         int cou = 0;
         FileWriter n_stream = new FileWriter("status.txt");
         BufferedWriter n_out = new BufferedWriter(n_stream);
@@ -62,6 +63,18 @@ public class Main {
             cou++;
         }
         n_out.close();
+
+        int numb = leftover.size();
+        int coun = 0;
+        FileWriter m_stream = new FileWriter("left.txt");
+        BufferedWriter m_out = new BufferedWriter(m_stream);
+        Iterator<Map.Entry<String, String>> m_it = leftover.entrySet().iterator();
+        while (m_it.hasNext() && coun < numb){
+            Map.Entry<String, String> pairs = m_it.next();
+            m_out.write(pairs.getKey() + "\n" + pairs.getValue()  + "\n");
+            coun++;
+        }
+        m_out.close();
     }
 
     public static StringBuilder options(String type, String input){
@@ -122,6 +135,38 @@ public class Main {
         }
     }
 
+    private static void checker(Map<String, String> RNA, Map<String, String> dot){
+        Iterator<Map.Entry<String, String>> it = dot.entrySet().iterator();
+        Iterator<Map.Entry<String, String>> is = RNA.entrySet().iterator();
+        while(it.hasNext()){
+            Map.Entry<String, String> entry = it.next();
+            String key = entry.getKey();
+            for (int j = 0; j < dot.get(key).length(); j++) {
+                if (dot.get(key).charAt(j) == ')'){
+                    for (int i = j + 1; i < dot.get(key).length(); i++) {
+                        if (dot.get(key).charAt(i) == '('){
+                            leftover.put(key, RNA.get(key));
+                            it.remove();
+                            j = -10;
+                            break;
+                        }
+                    }
+                }
+                if (j == -10){
+                    break;
+                }
+            }
+        }
+        while(is.hasNext()){
+            Map.Entry<String, String> entry = is.next();
+            String key = entry.getKey();
+            if (!dot.containsKey(key)){
+                is.remove();
+            }
+        }
+
+    }
+
 
     public static void main(String[] args) throws IOException {
 //        for (String key: RNA.keySet()) {
@@ -153,6 +198,7 @@ public class Main {
         File dotFile = new File("hairpin.dot");
         Map<String, String> RNA = ReadFile.readRNA(dotFile);
         Map<String, String> dot = ReadFile.readDot(dotFile);
+        checker(RNA, dot);
         makeDictionary(RNA, dot);
 //        int num = result.size();
 //        int count = 0;
