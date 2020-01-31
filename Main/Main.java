@@ -176,7 +176,7 @@ public class Main {
         System.out.println(choppedList.get(3));*/
 
         System.out.println(Motif.RNADecomposer(RNA, dot));
-        System.out.println("haha");
+//        System.out.println("haha");
 
 
 

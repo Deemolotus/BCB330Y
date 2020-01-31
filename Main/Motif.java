@@ -187,6 +187,9 @@ class Motif {
             else if (hairPin.charAt(i) == '/' && hairPin.charAt(i - 1) == ')'){
                 hairPin.insert(i, '-');
             }
+            else if (hairPin.charAt(i) == '/' && hairPin.charAt(i + 1) == '('){
+                hairPin.insert(i + 1, '-');
+            }
             if (hairPin.charAt(i) == ')' && hairPin.charAt(i + 1) != '('){
                 int j = i + 1;
                 int count  = 0;
