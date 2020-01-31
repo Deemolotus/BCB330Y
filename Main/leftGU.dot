@@ -1,95 +1,58 @@
 ENERGY = -29.5  hsa-mir-4257 MI0015856
-...................................... (  0.00)
 GGCUUAGAAACAGUCCCUAGGUAGGAUUUGGGGAGGAGCUAAGAAGCCCCUACAGGGCCCAGAGGUGGGGACUGAGCCUUAGUUGG
-((((......(((((((((.......((((((((((.(((....))).))).)....))))))..)))))))))))))........ (-29.90)
+((((......(((((((((.......((((((((((.(((....))).))).)....))))))..)))))))))))))........
 ENERGY = -35.5  hsa-mir-5090 MI0017979
-...................................... (  0.00)
 UCUGAGGUACCCGGGGCAGAUUGGUGUAGGGUGCAAAGCCUGCCCGCCCCCUAAGCCUUCUGCCCCCAACUCCAGCCUGUCAGGA
-((((((((....((((((((..(((.(((((.((...........)).))))).))).))))))))........)))..))))). (-34.40)
+((((((((....((((((((..(((.(((((.((...........)).))))).))).))))))))........)))..))))).
 ENERGY = -28.0  hsa-mir-4283-2 MI0015982
-........................................ (  0.00)
 ACUCUGAUCCUGGGGCUCAGCGAGUUUGCAAGGGGUGUUUCUGUCCAUGGUCAGGCUUGCCAGCCUUGGUCCUUGGGCCC
-.(((.....((((((((..((((((((((...(((........)))...).))))))))).)))))))).....)))... (-25.50)
+.(((.....((((((((..((((((((((...(((........)))...).))))))))).)))))))).....)))...
 ENERGY = -31.2  hsa-mir-5007 MI0017874
-...................................... (  0.00)
 GGUAAACCUUGGUGACUAAUUAGAGUCUGGCUGAUAUGGUUUGACACAGAGCUAAAUCAUAUGAACCAAACUCUAAUUAGUCAAUAAUUUCUGUU
-............((((((((((((((.(((.(.((((((((((.(.....).)))))))))).).))).))))))))))))))............ (-32.30)
+............((((((((((((((.(((.(.((((((((((.(.....).)))))))))).).))).))))))))))))))............
 ENERGY = -46.2  hsa-mir-606 MI0003619
-..................................... (  0.00)
 UGUAUCCUUGGUUUUUAGUAGUUUUACUAUGAUGAGGUGUGCCAUCCACCCCAUCAUAGUAAACUACUGAAAAUCAAAGAUACAAGUGCCUGACCA
-((((((.(((((((((((((((((.(((((((((.((((.......)))).)))))))))))))))))))))))))).))))))............ (-45.00)
-ENERGY = -29.9  hsa-mir-4285 MI0015891
-...................................... (  0.00)
-AUUAGGCGGGGCGGCGAGUCCGACUCAUAAAUAUUUUAAGGAAUGACCCGGCCCUGGGGUGCGGAAUUGCUGCGCGGGCGGGGGC
-....((..((((.....))))..)).....................(((.((((....((((((.....)))))))))).))).. (-29.00)
-ENERGY = -36.3  hsa-mir-1236 MI0006326
-...................................... (  0.00)
-GUGAGUGACAGGGGAAAUGGGGAUGGACUGGAAGUGGGCAGCAUGGAGCUGACCUUCAUCAUGGCUUGGCCAACAUAAUGCCUCUUCCCCUUGUCUCUCCAG
-(.(((.((((((((((..((..(((.....((.(.(((((((.....)))).))).).)).((((...)))).)))....))..)))))).)))).)))).. (-36.40)
-ENERGY = -54.9  hsa-mir-181a-2 MI0000269
-........................................ (  0.00)
-AGAAGGGCUAUCAGGCCAGCCUUCAGAGGACUCCAAGGAACAUUCAACGCUGUCGGUGAGUUUGGGAUUUGAAAAAACCACUGACCGUUGACUGUACCUUGGGGUCCUUA
-.((((((((....)))...))))).(((((((((((((.(((.((((((..(((((((.((((...........))))))))))))))))).))).))))))))))))). (-53.70)
-ENERGY = -32.6  hsa-mir-5004 MI0017870
-...................................... (  0.00)
-GGCACUUGCUUGGGGGUUAGUGAGGACAGGGCAAAUUCACGAGAUUGGGUUGUGCAGAGGCUGACACUUGGAUUUUCCUGGGCCUCAGGACUUCCUUUCAGACAUGG
-(((....))).(((((((..(((((.(((((.(((((((.(.(.((((.((......)).))))).).))))))))))))..))))).)))))))............ (-31.10)
-ENERGY = -33.5  hsa-mir-6082 MI0020359
-...................................... (  0.00)
-UUGAAGAAUACGUCUGGUUGAUCCAGUCCACUUAAUUCUGAGAAAGUCCACAGACUGGAUCGGGUCUUGGAUUUUAGCUGGAUUCAUUGACUGGGCUAUAUUUGUCAUA
-.(((.(((((.((((((((((((((((...((((....))))((((((((.(((((......))))))))))))).))))))))....))))))))..))))).))).. (-33.90)
-ENERGY = -36.2  hsa-mir-6134 MI0021279
-...................................... (  0.00)
-UGGGCCUUGAUGUCAGUAGGGCUCAGUAGGGAACUGACCCUCUAUUUCCACCUGCAUAAAUGAAGCUGAAUGAGGUGGUAGGAUGUAGAGCUGGUUGACACUCUGCUUU
-.((((((((.......))))))))(((((((...(((((((((((..((((((.(((............)))))))))......))))))..)))))...))))))).. (-35.90)
-ENERGY = -22.6  hsa-mir-591 MI0003603
-..................................... (  0.00)
-UCUUAUCAAUGAGGUAGACCAUGGGUUCUCAUUGUAAUAGUGUAGAAUGUUGGUUAACUGUGGACUCCCUGGCUCUGUCUCAAAUCUACUGAUUC
-.........((((((((((((.((((((.((((((((((........)))))..))).)).)))).)).))).)))))))))((((....)))). (-21.70)
-ENERGY = -46.6  hsa-mir-151a MI0000809
-...................................... (  0.00)
-UUUCCUGCCCUCGAGGAGCUCACAGUCUAGUAUGUCUCAUCCCCUACUAGACUGAAGCUCCUUGAGGACAGGGAUGGUCAUACUCACCUC
-.((((((.((((((((((((..((((((((((.(........).)))))))))).)))))))))))).)))))).(((.......))).. (-45.90)
-ENERGY = -20.6  hsa-mir-4315-1 MI0015844
-........................................ (  0.00)
-UGGGCUUUGCCCGCUUUCUGAGCUGGACCCUCUCUCUACCUCUGGUGCAGAACUACAGCGGAAGGAAUCUCUG
-.((((...)))).((((((..((((.......(((.((((...)))).)))....))))))))))........ (-19.40)
-ENERGY = -23.4  hsa-mir-9985 MI0032313
-...................................... (  0.00)
-CCCAUGUUCAUUGAGCUUUAUUCACAGUGGCUAAGCUAUGGAAUCCAUCCAAGUGUUCACUGAUGGAUAAAUGGAUACAGAAAAUGUUUAUAUAUAUAUAUAUAAUAUU
-.((((((((...)))).(((((((((((((....(((.((((.....)))))))..)))))).)))))))))))........((((((.(((((....))))))))))) (-22.80)
-ENERGY = -23.8  hsa-mir-5739 MI0019412
-...................................... (  0.00)
-GGUUGGCUAUAACUAUCAUUUCCAAGGUUGUGCUUUUAGGAAAUGUUGGCUGUCCUGCGGAGAGAGAAUGGGGAGCCAGG
-(((((....)))))..((((((((((((...)))))..)))))))((((((.(((..............))).)))))). (-22.60)
+((((((.(((((((((((((((((.(((((((((.((((.......)))).)))))))))))))))))))))))))).))))))............
 ENERGY = -44.9  hsa-mir-6131 MI0021276
-...................................... (  0.00)
 UCCCGCAUUCCCUCUGCUUUGGUCAGGUGGUGCCCUCCUUCCAUGGGUAGAGCCAGAGAUGGUGGGUUCUGGCUGGUCAGAUGGGAGUGGACAGAGACCCGGGGUCCUC
-((((((((((((((((..(((((((((....((((.((.((..(((......)))..)).)).))))))))))))).)))).)))))))..........)))))..... (-44.50)
+((((((((((((((((..(((((((((....((((.((.((..(((......)))..)).)).))))))))))))).)))).)))))))..........))))).....
+ENERGY = -43.1  hsa-mir-431 MI0001721
+UCCUGCUUGUCCUGCGAGGUGUCUUGCAGGCCGUCAUGCAGGCCACACUGACGGUAACGUUGCAGGUCGUCUUGCAGGGCUUCUCGCAAGACGACAUCCUCAUCACCAACGACG
+...((.(((((.(((((((.((((((((((.((.(.((((((((........)))....))))).).)).)))))))))).))))))).)))))))..................
+ENERGY = -55.1  hsa-mir-659 MI0003683
+UACCGACCCUCGAUUUGGUUCAGGACCUUCCCUGAACCAAGGAAGAGUCACAGUCUCUUCCUUGGUUCAGGGAGGGUCCCCAACAAUGUCCUCAUGG
+...........(((...(((..(((((((((((((((((((((((((.......)))))))))))))))))))))))))..)))...))).......
+ENERGY = -37.8  hsa-mir-5194 MI0018173
+AUUUCUUUGGGUUAACUUAAACUCAGCCCUUCUAGGCCCAUUCUUUUCACUCAGGAAUUGGAUAAGCUUUUCUGAGGGGUUUGGAAUGGGAUGGCAGGGAGAGUCACCAGACACCAUGAA
+..(((..((((((.......((((..((((.(((..((((((((.(((.((((((((...........)))))))))))...)))))))).))).)))).)))).....))).))).)))
+ENERGY = -40.0  hsa-mir-3939 MI0016596
+CUGGCUUCCAAAGGCCUCUGUGUGUUCCUGUAUGUGGGCGUGCACGUACCUGUCACAUGUGUACGCGCAGACCACAGGAUGUCCACACUGGCUUCCAAACACAUCU
+.(((.......(((((..((((...((((((.(.((.((((((((((.........)))))))))).)).)..))))))....))))..)))))))).........
+ENERGY = -44.9  hsa-mir-1233-1 MI0006323
+GUGAGUGGGAGGCCAGGGCACGGCAGGGGGAGCUGCAGGGCUAUGGGAGGGGCCCCAGCGUCUGAGCCCUGUCCUCCCGCAG
+....((((((((.((((((........(((.((((..(((((........))))))))).)))..)))))).))))))))..
+ENERGY = -33.8  hsa-mir-8087 MI0025923
+UCUAAGAAGUGAAGACUUCUUGGAUUACAGGGGCCCUACUUUAAGGGCCCUUUCAGUUGGAAGUUUUCCUUUCUGCCU
+....(((((.((((((((((..((((..(((((((((......)))))))))..)))))))))))))).)))))....
+ENERGY = -32.2  hsa-mir-873 MI0005564
+GUGUGCAUUUGCAGGAACUUGUGAGUCUCCUAUUGAAAAUGAACAGGAGACUGAUGAGUUCCCGGGAACACCCACAA
+(((.(..(((.(.(((((((((.((((((((.((.......)).)))))))).))))))))).).)))..).)))..
+ENERGY = -53.6  hsa-mir-940 MI0005762
+GUGAGGUGUGGGCCCGGCCCCAGGAGCGGGGCCUGGGCAGCCCCGUGUGUUGAGGAAGGAAGGCAGGGCCCCCGCUCCCCGGGCCUGACCCCAC
+(((.(((..((((((((.....((((((((((((.(.(..((((.........))..))..).).))).))))))))))))))))).))).))) (-52.90)
+
+
 ENERGY = -70.4  hsa-mir-1199 MI0020340
-...................................... (  0.00)
 AGCCUGCGCCGGAGCCGGGGCCUGAGCCCGGGCCGCGCAGGCCGUGAACUCGUCGAGCUGCGCGUGCGGCCGGUGCUCAACCUGCCGGGUCCUGGCCCCGCGCUCCCGCGCGCCCUGGA
-..(((((((.((((((((((((.(.((((..(((((((((..((((....)).))..))))))).))(((.(((.....))).))))))).).))))))).))))).)))))....)). (-70.90)
+..(((((((.((((((((((((.(.((((..(((((((((..((((....)).))..))))))).))(((.(((.....))).))))))).).))))))).))))).)))))....)).
 ENERGY = -39.6  hsa-mir-6720 MI0022555
 ...................................... (  0.00)
 UUGAGCGAGAGAUUGUGGCGCACCGAGUUCUUCCAGCCCUGGUAGGCGCCGCGGAAGAAGGGGAAGCGCGCCUGCAGGAACUGGUAGAUCUCGCUGAG
 .(.(((((((.....(((....)))...(((.((((.((((.(((((((.((.............)))))))))))))..)))).)))))))))).). (-38.30)
-ENERGY = -43.1  hsa-mir-431 MI0001721
-..................................... (  0.00)
-UCCUGCUUGUCCUGCGAGGUGUCUUGCAGGCCGUCAUGCAGGCCACACUGACGGUAACGUUGCAGGUCGUCUUGCAGGGCUUCUCGCAAGACGACAUCCUCAUCACCAACGACG
-...((.(((((.(((((((.((((((((((.((.(.((((((((........)))....))))).).)).)))))))))).))))))).))))))).................. (-43.40)
-ENERGY = -55.1  hsa-mir-659 MI0003683
-..................................... (  0.00)
-UACCGACCCUCGAUUUGGUUCAGGACCUUCCCUGAACCAAGGAAGAGUCACAGUCUCUUCCUUGGUUCAGGGAGGGUCCCCAACAAUGUCCUCAUGG
-...........(((...(((..(((((((((((((((((((((((((.......)))))))))))))))))))))))))..)))...)))....... (-54.60)
 ENERGY = -22.4  hsa-mir-10400 MI0033424
 ....................................... (  0.00)
 CGGCGGCGGCGGCUCUGGGCGAGGCGGCGGGGCCUGGGCUCCCGGACGAGGCGGG
 .(((..((.((.(((.....))).)).))..)))......((((.......)))) (-22.20)
-ENERGY = -37.8  hsa-mir-5194 MI0018173
-...................................... (  0.00)
-AUUUCUUUGGGUUAACUUAAACUCAGCCCUUCUAGGCCCAUUCUUUUCACUCAGGAAUUGGAUAAGCUUUUCUGAGGGGUUUGGAAUGGGAUGGCAGGGAGAGUCACCAGACACCAUGAA
-..(((..((((((.......((((..((((.(((..((((((((.(((.((((((((...........)))))))))))...)))))))).))).)))).)))).....))).))).))) (-37.20)
 ENERGY = -46.1  hsa-mir-3914-2 MI0016421
 ........................................ (  0.00)
 GAGUUCCUACUCAACUUCUCAUUUUCUGGUUCCUUCUACCAAGUUAAGCAUACUCAUUAGAAGGAACCAGAAAAUGAGAAGUUAAAUCUGAAGUC
@@ -98,18 +61,6 @@ ENERGY = -46.1  hsa-mir-6892 MI0022739
 ...................................... (  0.00)
 GUAAGGGACCGGAGAGUAGGAAAAGCAGGGCUCAGGGCCAGAGAGACUGGGCAUAGAACUAAGGAGGAUGGUGUCCUCCUGACUGCAUCUCUCUUCCCUCUCCCACCCCUUGCAG
 (((((((...((((((..((((.((.(((...((((.((((.....)))).).........((((((((...))))))))..)))..))))).))))))))))...))))))).. (-46.60)
-ENERGY = -40.0  hsa-mir-3939 MI0016596
-...................................... (  0.00)
-CUGGCUUCCAAAGGCCUCUGUGUGUUCCUGUAUGUGGGCGUGCACGUACCUGUCACAUGUGUACGCGCAGACCACAGGAUGUCCACACUGGCUUCCAAACACAUCU
-.(((.......(((((..((((...((((((.(.((.((((((((((.........)))))))))).)).)..))))))....))))..))))))))......... (-38.70)
-ENERGY = -44.9  hsa-mir-1233-1 MI0006323
-........................................ (  0.00)
-GUGAGUGGGAGGCCAGGGCACGGCAGGGGGAGCUGCAGGGCUAUGGGAGGGGCCCCAGCGUCUGAGCCCUGUCCUCCCGCAG
-....((((((((.((((((........(((.((((..(((((........))))))))).)))..)))))).)))))))).. (-44.10)
-ENERGY = -33.8  hsa-mir-8087 MI0025923
-...................................... (  0.00)
-UCUAAGAAGUGAAGACUUCUUGGAUUACAGGGGCCCUACUUUAAGGGCCCUUUCAGUUGGAAGUUUUCCUUUCUGCCU
-....(((((.((((((((((..((((..(((((((((......)))))))))..)))))))))))))).))))).... (-33.50)
 ENERGY = -22.6  hsa-mir-12136 MI0039740
 ....................................... (  0.00)
 GAAAAAGUCAUGGAGGCCAUGGGGUUGGCUUGAAACCAGCUUUGGGGGGUUCGAUUCCUUCCUUUUUUGUC
@@ -126,18 +77,12 @@ ENERGY = -54.5  hsa-mir-551a MI0003556
 ...................................... (  0.00)
 GGGGACUGCCGGGUGACCCUGGAAAUCCAGAGUGGGUGGGGCCAGUCUGACCGUUUCUAGGCGACCCACUCUUGGUUUCCAGGGUUGCCCUGGAAA
 ((......))(((((((((((((((((.(((((((((...(((((...........)).))).))))))))).)))))))))))))))))...... (-54.30)
-ENERGY = -32.2  hsa-mir-873 MI0005564
-..................................... (  0.00)
-GUGUGCAUUUGCAGGAACUUGUGAGUCUCCUAUUGAAAAUGAACAGGAGACUGAUGAGUUCCCGGGAACACCCACAA
-(((.(..(((.(.(((((((((.((((((((.((.......)).)))))))).))))))))).).)))..).))).. (-32.00)
+
 ENERGY = -49.9  hsa-mir-212 MI0000288
 ..................................... (  0.00)
 CGGGGCACCCCGCCCGGACAGCGCGCCGGCACCUUGGCUCUAGACUGCUUACUGCCCGGGCCGCCCUCAGUAACAGUCUCCAGUCACGGCCACCGACGCCUGGCCCCGCC
 ((((((...((....)).(((.(((.(((..((.(((((..((((((.((((((...(((...))).))))))))))))..))))).))...))).)))))))))))).. (-49.90)
-ENERGY = -53.6  hsa-mir-940 MI0005762
-..................................... (  0.00)
-GUGAGGUGUGGGCCCGGCCCCAGGAGCGGGGCCUGGGCAGCCCCGUGUGUUGAGGAAGGAAGGCAGGGCCCCCGCUCCCCGGGCCUGACCCCAC
-(((.(((..((((((((.....((((((((((((.(.(..((((.........))..))..).).))).))))))))))))))))).))).))) (-52.90)
+
 ENERGY = -67.6  hsa-mir-6786 MI0022631
 ...................................... (  0.00)
 GCCGGGUGGGGCGGGGCGGCCUCAGGAGGGGCCCAGCUCCCCUGGAUGUGCUGCGGUGGGGCCGGAGGGGCGUCACGUGCACCCAAGUGACGCCCCUUCUGAUUCUGCCUCAG
@@ -430,3 +375,39 @@ ENERGY = -39.3  hsa-mir-1227 MI0006316
 ...................................... (  0.00)
 GUGGGGCCAGGCGGUGGUGGGCACUGCUGGGGUGGGCACAGCAGCCAUGCAGAGCGGGCAUUUGACCCCGUGCCACCCUUUUCCCCAG
 .(((((..(((.((((((.....((((..((.((.......)).))..)))).(((((........))))))))))))))..))))). (-38.60)
+
+
+
+ENERGY = -29.9  hsa-mir-4285 MI0015891
+AUUAGGCGGGGCGGCGAGUCCGACUCAUAAAUAUUUUAAGGAAUGACCCGGCCCUGGGGUGCGGAAUUGCUGCGCGGGCGGGGGC
+....((..((((.....))))..)).....................(((.((((....((((((.....)))))))))).)))..
+ENERGY = -36.3  hsa-mir-1236 MI0006326
+GUGAGUGACAGGGGAAAUGGGGAUGGACUGGAAGUGGGCAGCAUGGAGCUGACCUUCAUCAUGGCUUGGCCAACAUAAUGCCUCUUCCCCUUGUCUCUCCAG
+(.(((.((((((((((..((..(((.....((.(.(((((((.....)))).))).).)).((((...)))).)))....))..)))))).)))).))))..
+ENERGY = -54.9  hsa-mir-181a-2 MI0000269
+AGAAGGGCUAUCAGGCCAGCCUUCAGAGGACUCCAAGGAACAUUCAACGCUGUCGGUGAGUUUGGGAUUUGAAAAAACCACUGACCGUUGACUGUACCUUGGGGUCCUUA
+.((((((((....)))...))))).(((((((((((((.(((.((((((..(((((((.((((...........))))))))))))))))).))).))))))))))))).
+ENERGY = -32.6  hsa-mir-5004 MI0017870
+GGCACUUGCUUGGGGGUUAGUGAGGACAGGGCAAAUUCACGAGAUUGGGUUGUGCAGAGGCUGACACUUGGAUUUUCCUGGGCCUCAGGACUUCCUUUCAGACAUGG
+(((....))).(((((((..(((((.(((((.(((((((.(.(.((((.((......)).))))).).))))))))))))..))))).)))))))............
+ENERGY = -33.5  hsa-mir-6082 MI0020359
+UUGAAGAAUACGUCUGGUUGAUCCAGUCCACUUAAUUCUGAGAAAGUCCACAGACUGGAUCGGGUCUUGGAUUUUAGCUGGAUUCAUUGACUGGGCUAUAUUUGUCAUA
+.(((.(((((.((((((((((((((((...((((....))))((((((((.(((((......))))))))))))).))))))))....))))))))..))))).)))..
+ENERGY = -36.2  hsa-mir-6134 MI0021279
+UGGGCCUUGAUGUCAGUAGGGCUCAGUAGGGAACUGACCCUCUAUUUCCACCUGCAUAAAUGAAGCUGAAUGAGGUGGUAGGAUGUAGAGCUGGUUGACACUCUGCUUU
+.((((((((.......))))))))(((((((...(((((((((((..((((((.(((............)))))))))......))))))..)))))...)))))))..
+ENERGY = -22.6  hsa-mir-591 MI0003603
+UCUUAUCAAUGAGGUAGACCAUGGGUUCUCAUUGUAAUAGUGUAGAAUGUUGGUUAACUGUGGACUCCCUGGCUCUGUCUCAAAUCUACUGAUUC
+.........((((((((((((.((((((.((((((((((........)))))..))).)).)))).)).))).)))))))))((((....)))).
+ENERGY = -46.6  hsa-mir-151a MI0000809
+UUUCCUGCCCUCGAGGAGCUCACAGUCUAGUAUGUCUCAUCCCCUACUAGACUGAAGCUCCUUGAGGACAGGGAUGGUCAUACUCACCUC
+.((((((.((((((((((((..((((((((((.(........).)))))))))).)))))))))))).)))))).(((.......)))..
+ENERGY = -20.6  hsa-mir-4315-1 MI0015844
+UGGGCUUUGCCCGCUUUCUGAGCUGGACCCUCUCUCUACCUCUGGUGCAGAACUACAGCGGAAGGAAUCUCUG
+.((((...)))).((((((..((((.......(((.((((...)))).)))....))))))))))........
+ENERGY = -23.4  hsa-mir-9985 MI0032313
+CCCAUGUUCAUUGAGCUUUAUUCACAGUGGCUAAGCUAUGGAAUCCAUCCAAGUGUUCACUGAUGGAUAAAUGGAUACAGAAAAUGUUUAUAUAUAUAUAUAUAAUAUU
+.((((((((...)))).(((((((((((((....(((.((((.....)))))))..)))))).)))))))))))........((((((.(((((....)))))))))))
+ENERGY = -23.8  hsa-mir-5739 MI0019412
+GGUUGGCUAUAACUAUCAUUUCCAAGGUUGUGCUUUUAGGAAAUGUUGGCUGUCCUGCGGAGAGAGAAUGGGGAGCCAGG
+(((((....)))))..((((((((((((...)))))..)))))))((((((.(((..............))).)))))).

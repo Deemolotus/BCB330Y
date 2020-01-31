@@ -34,7 +34,7 @@ class Dictionary {
                     nameToRNA.put(RNAName, sequenceRaw);
                     nameToDot.put(RNAName, dotbracketRaw);
 
-                    String value = Motif.motifMaker(Motif.motif(sequenceRaw,dotbracketRaw));
+                    String value = Motif.motifMaker(Motif.RNADecomposer(sequenceRaw,dotbracketRaw));
                     nameToMotif.put(RNAName, value);
                 }
             }

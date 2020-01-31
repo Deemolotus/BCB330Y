@@ -3,41 +3,9 @@ import java.util.*;
 
 public class Main {
 
-    private static Map<String, String> result = new HashMap<>();
-    private static Map<String, Integer> status = new HashMap<>();
-    private static Map<String, String> leftover = new HashMap<>();
-    private static Motif a = new Motif();
 
-    static void makeDictionary(Map<String, String> RNA, Map<String, String> dot){
 
-        for (String key: RNA.keySet()) {
-            result.put(key, a.motifMaker(a.motif(RNA.get(key),dot.get(key))));
-        }
-
-        result.forEach((k, v) -> {
-            String[] token = v.split("\n");
-            for (String s : token) {
-                StringBuilder temp = new StringBuilder();
-                temp.append(s);
-                if (status.containsKey(s)){
-                    int count = status.get(s);
-                    count++;
-                    status.replace(s, count);
-                }
-                else if (status.containsKey(temp.reverse().toString())){
-                    int count = status.get(temp.toString());
-                    count++;
-                    status.replace(temp.toString(), count);
-                    temp.setLength(0);
-                }
-                else{
-                    status.put(s, 1);
-                }
-            }
-        });
-    }
-
-    private static void writeToFile() throws IOException {
+    public static void writeToFile(Map<String, String> result, Map<String, Integer> status) throws IOException {
         int num = result.size();
         int count = 0;
         FileWriter stream = new FileWriter("motif.txt");
@@ -64,6 +32,7 @@ public class Main {
         }
         n_out.close();
 
+        /*
         int numb = leftover.size();
         int coun = 0;
         FileWriter m_stream = new FileWriter("left.txt");
@@ -74,10 +43,10 @@ public class Main {
             m_out.write(pairs.getKey() + "\n" + pairs.getValue()  + "\n");
             coun++;
         }
-        m_out.close();
+        m_out.close();*/
     }
 
-    public static StringBuilder options(String type, String input){
+    public static StringBuilder options(String type, String input, Map<String, String> result, Map<String, Integer> status){
 
         StringBuilder makeString = new StringBuilder();
         String fix = "Num motif in human miRNA: ";
@@ -135,6 +104,7 @@ public class Main {
         }
     }
 
+    /*
     private static void checker(Map<String, String> RNA, Map<String, String> dot){
         Iterator<Map.Entry<String, String>> it = dot.entrySet().iterator();
         Iterator<Map.Entry<String, String>> is = RNA.entrySet().iterator();
@@ -165,7 +135,7 @@ public class Main {
             }
         }
 
-    }
+    }*/
 
 
     public static void main(String[] args) throws IOException {
@@ -195,11 +165,24 @@ public class Main {
 //        });
 //
 //        //System.out.println(result);
-        File dotFile = new File("hairpin.dot");
-        Map<String, String> RNA = ReadFile.readRNA(dotFile);
-        Map<String, String> dot = ReadFile.readDot(dotFile);
-        checker(RNA, dot);
-        makeDictionary(RNA, dot);
+        String RNA = "CACACAGACGGCAGCUGCGGCCUAGCCCCCAGGCUUCACUUGGCGUGGACAACUUGCUAAGUAAAGUGGGGGGUGGGCCACGGCUGGCUCCUACCUGGAC";
+        String dot = ".........(.((((.(.((((.(.((((((..(((.((((.((..(.....)..)).)))).))))))))).).)))).).)))).)(((.....))).";
+        /*List<Integer> resulting = Motif.RNAUnclothHelper(dot);
+
+        List<String> choppedList = Motif.RNAChopper(RNA, dot, resulting);
+        System.out.println(choppedList.get(0));
+        System.out.println(choppedList.get(1));
+        System.out.println(choppedList.get(2));
+        System.out.println(choppedList.get(3));*/
+
+        System.out.println(Motif.RNADecomposer(RNA, dot));
+        System.out.println("haha");
+
+
+
+        Dictionary dictionary = new Dictionary("hairpin.dot");
+        Map<String, String> result = dictionary.getRNAMap();
+        Map<String, Integer> status = dictionary.getMotifToNum();
 //        int num = result.size();
 //        int count = 0;
 //        FileWriter stream = new FileWriter("motif.txt");
@@ -225,7 +208,7 @@ public class Main {
 //            cou++;
 //        }
 //        n_out.close();
-        writeToFile();
+        writeToFile(result, status);
 
 //        StringBuilder makeString = new StringBuilder();
 //        String fix = "Num motif in human miRNA: ";
@@ -287,6 +270,6 @@ public class Main {
 //                    break;
 //            }
 //        }
-        options(type, input);
+        options(type, input, result, status);
     }
 }
