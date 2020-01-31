@@ -49,9 +49,9 @@ class Dictionary {
         return nameToRNA;
     }
 
-    Map<String, String> getDotMap (){
-        return nameToDot;
-    }
+//    Map<String, String> getDotMap (){
+//        return nameToDot;
+//    }
 
     Map<String, String> getMotifMap (){
         return nameToMotif;

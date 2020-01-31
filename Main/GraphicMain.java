@@ -23,7 +23,7 @@ public class GraphicMain extends Application {
         primaryStage.setScene(rootScene);
         primaryStage.setResizable(false);
         primaryStage.show();
-        primaryStage.setTitle("mRNABase");
+        primaryStage.setTitle("miRNABase");
 
 
         //Loading Login Page

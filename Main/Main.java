@@ -46,7 +46,8 @@ public class Main {
         m_out.close();*/
     }
 
-    public static StringBuilder options(String type, String input, Map<String, String> result, Map<String, Integer> status){
+    public static StringBuilder options(String type, String input, Map<String, String> result,
+                                        Map<String, Integer> status){
 
         StringBuilder makeString = new StringBuilder();
         String fix = "Num motif in human miRNA: ";
@@ -165,8 +166,8 @@ public class Main {
 //        });
 //
 //        //System.out.println(result);
-        String RNA = "CACACAGACGGCAGCUGCGGCCUAGCCCCCAGGCUUCACUUGGCGUGGACAACUUGCUAAGUAAAGUGGGGGGUGGGCCACGGCUGGCUCCUACCUGGAC";
-        String dot = ".........(.((((.(.((((.(.((((((..(((.((((.((..(.....)..)).)))).))))))))).).)))).).)))).)(((.....))).";
+//        String RNA = "CACACAGACGGCAGCUGCGGCCUAGCCCCCAGGCUUCACUUGGCGUGGACAACUUGCUAAGUAAAGUGGGGGGUGGGCCACGGCUGGCUCCUACCUGGAC";
+//        String dot = ".........(.((((.(.((((.(.((((((..(((.((((.((..(.....)..)).)))).))))))))).).)))).).)))).)(((.....))).";
         /*List<Integer> resulting = Motif.RNAUnclothHelper(dot);
 
         List<String> choppedList = Motif.RNAChopper(RNA, dot, resulting);
@@ -175,7 +176,7 @@ public class Main {
         System.out.println(choppedList.get(2));
         System.out.println(choppedList.get(3));*/
 
-        System.out.println(Motif.RNADecomposer(RNA, dot));
+//        System.out.println(Motif.RNADecomposer(RNA, dot));
 //        System.out.println("haha");
 
 
