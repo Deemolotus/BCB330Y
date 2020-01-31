@@ -5,6 +5,7 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.layout.*;
 import java.io.File;
+import java.io.IOException;
 import java.util.Map;
 
 
@@ -21,6 +22,11 @@ public class UserInterface {
 
     private FileChooser fileChooser = new FileChooser();
 
+    private Map<String, String> result;
+    private Map<String, Integer> status;
+    private Dictionary dictionary;
+
+
     public void initialize() {
         Selection.setValue("miRNA");
         Selection.getItems().addAll(FXCollections.observableArrayList("miRNA","Motif"));
@@ -31,6 +37,10 @@ public class UserInterface {
         fileChooser.setInitialFileName("hairpin.dot");
         fileChooser.getExtensionFilters().addAll(
                 new FileChooser.ExtensionFilter("Dot Files", "*.dot"));
+
+        dictionary = new Dictionary("hairpin.dot");
+        result = dictionary.getMotifMap();
+        status = dictionary.getMotifToNum();
 
         setBackground();
     }
@@ -55,7 +65,7 @@ public class UserInterface {
             alert.showAndWait();
         } else {
             String type = Selection.getValue();
-            StringBuilder searchResult = Main.options(type, searchableItem);
+            StringBuilder searchResult = Main.options(type, searchableItem, result, status);
             if (searchResult == null){
                 Alert alert = new Alert(Alert.AlertType.ERROR);
                 alert.setContentText("Nothing is found under search for " + searchableItem);
@@ -72,9 +82,12 @@ public class UserInterface {
         if (selectedFile != null){
             resultDisplay.setText("Loading " + selectedFile.getName());
 
-            Map<String, String> RNA = ReadFile.readRNA(selectedFile);
-            Map<String, String> dot = ReadFile.readDot(selectedFile);
-            Main.makeDictionary(RNA, dot);
+            try{
+            Main.writeToFile(result, status);
+            } catch (IOException e){
+                resultDisplay.setText("Fail to write to file");
+            }
+
 
         } else {
             resultDisplay.setText("File selection cancelled.");

@@ -1,70 +1,65 @@
 class Motif {
 
-    StringBuilder motif(String miRNA, String dotForm) {
+    static StringBuilder motif(String miRNA, String dotForm) {
 
-        StringBuilder mot = new StringBuilder();
-        StringBuilder up = new StringBuilder();
-        StringBuilder down = new StringBuilder();
-        StringBuilder middle = new StringBuilder();
 
-        while(miRNA.length() != 0) {
+        StringBuilder result = new StringBuilder();
+        StringBuilder motif =  new StringBuilder();
+        int motifNum = 1;
+        motif.append('/');
 
-            int i = 0;
-            int j = miRNA.length() - 1;
-            if (dotForm.charAt(i) == '.') {
-                while(dotForm.charAt(i) != '(') {
-                    up.append(miRNA.charAt(i));
-                    i++;
-                    if(i == j + 1){
-                        break;
-                    }
+
+
+        int front = 0;
+        int back = miRNA.length() - 1;
+
+        while (front < back){
+
+
+            if (dotForm.charAt(front) == '(' & dotForm.charAt(back) == ')'){
+
+                if (motif.length() != 1){ //Offload motif
+                    result.append(motif);
+                    motif.setLength(0);
+                    motif.append('/');
+                    motifNum = 1;
                 }
-                if (miRNA.length() - i > 0) {
-                    dotForm = dotForm.substring(i);
-                    miRNA = miRNA.substring(i);
+
+                //Add RNA sequence
+                result.append('(');
+                result.append(miRNA.charAt(front));
+                result.append(miRNA.charAt(back));
+                result.append(')');
+
+                front ++;
+                back --;
+
+            } else {//Build motif
+
+                if (dotForm.charAt(front) == '.'){
+                    motif.insert(0, miRNA.charAt(front));
+                    front ++;
+                    motifNum ++;
                 }
-                mot.append(up);
-                up.setLength(0);
-                if(miRNA.length() - i == 0){
-                    return mot;
+
+                if (dotForm.charAt(back) == '.'){
+                    motif.insert(motifNum,miRNA.charAt(back));
+                    back --;
                 }
+
             }
 
-            i = 0;
-            j = miRNA.length() - 1;
-            if (dotForm.charAt(j) == '.') {
-                while(dotForm.charAt(j) != ')' ) {
-                    down.append(miRNA.charAt(j));
-                    j--;
-                    if(i == j - 1){
-                        break;
-                    }
-                }
-                if (miRNA.length() > 0) {
-                    dotForm = dotForm.substring(0,j + 1);
-                    miRNA = miRNA.substring(0,j + 1);
-                }
-                down.reverse();
-                mot.append("/").append(down);
-                down.setLength(0);
-            }
-
-            i = 0;
-            j = dotForm.length() - 1;
-            if (dotForm.charAt(i) == '(') {
-                if (dotForm.charAt(j) == ')') {
-                    middle.append("(").append(miRNA.charAt(i)).append(miRNA.charAt(j)).append(")");
-                    dotForm = dotForm.substring(i + 1,j);
-                    miRNA = miRNA.substring(i + 1, j);
-                    mot.append(middle);
-                    middle.setLength(0);
-                }
-            }
         }
-        return mot;
+
+        if (motif.length() != 0){ //Offload motif
+            result.append(motif);
+        }
+
+        return result;
+
     }
 
-    String motifMaker(StringBuilder hairPin){
+    static String motifMaker(StringBuilder hairPin){
 
         int i = 0;
         while(i < hairPin.length()) {
@@ -116,7 +111,7 @@ class Motif {
         return hairPins.toString();
     }
 
-    private StringBuilder motifMakeHelper(StringBuilder hairPin){
+    static private StringBuilder motifMakeHelper(StringBuilder hairPin){
 
         for (int j = 0; j < hairPin.length(); j++) {
             if (hairPin.charAt(j) == ')'){
