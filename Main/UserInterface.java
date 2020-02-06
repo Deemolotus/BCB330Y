@@ -24,6 +24,7 @@ public class UserInterface {
 
     private Map<String, String> result;
     private Map<String, Integer> status;
+    private Map<String, Integer> collection;
     private Dictionary dictionary;
 
 
@@ -83,7 +84,7 @@ public class UserInterface {
             resultDisplay.setText("Loading " + selectedFile.getName());
 
             try{
-            Main.writeToFile(result, status);
+            Main.writeToFile(result, status, collection);
             } catch (IOException e){
                 resultDisplay.setText("Fail to write to file");
             }

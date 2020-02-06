@@ -3,9 +3,9 @@ import java.util.*;
 
 public class Main {
 
+    public static void writeToFile(Map<String, String> result, Map<String,
+            Integer> status, Map<String, Integer> collection) throws IOException {
 
-
-    public static void writeToFile(Map<String, String> result, Map<String, Integer> status) throws IOException {
         int num = result.size();
         int count = 0;
         FileWriter stream = new FileWriter("motif.txt");
@@ -32,7 +32,19 @@ public class Main {
         }
         n_out.close();
 
-        /*
+        int number = collection.size();
+        int coun = 0;
+        FileWriter m_stream = new FileWriter("collection.txt");
+        BufferedWriter output = new BufferedWriter(m_stream);
+        Iterator<Map.Entry<String, Integer>> it_c = collection.entrySet().iterator();
+        while (it_c.hasNext() && coun < number){
+            Map.Entry<String, Integer> pairs = it_c.next();
+            output.write(pairs.getKey() + "\n" + pairs.getValue()  + "\n");
+            coun++;
+        }
+        output.close();
+
+        /* originally test for RNA contains two hairpin
         int numb = leftover.size();
         int coun = 0;
         FileWriter m_stream = new FileWriter("left.txt");
@@ -184,6 +196,7 @@ public class Main {
         Dictionary dictionary = new Dictionary("hairpin.dot");
         Map<String, String> result = dictionary.getRNAMap();
         Map<String, Integer> status = dictionary.getMotifToNum();
+        Map<String, Integer> collection = dictionary.getCollection();
 //        int num = result.size();
 //        int count = 0;
 //        FileWriter stream = new FileWriter("motif.txt");
@@ -209,7 +222,7 @@ public class Main {
 //            cou++;
 //        }
 //        n_out.close();
-        writeToFile(result, status);
+        writeToFile(result, status, collection);
 
 //        StringBuilder makeString = new StringBuilder();
 //        String fix = "Num motif in human miRNA: ";

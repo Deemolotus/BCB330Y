@@ -1,0 +1,10 @@
+5_Bulge
+1002
+3_Bulge
+1322
+hairpin
+1917
+internal_loop
+5710
+free_end
+1349
