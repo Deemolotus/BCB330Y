@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-cd ./RNAstructure
 make AllSub
 make ct2dot
 
@@ -8,7 +7,7 @@ echo Please Enter the filename:
 
 read -p 'Filename: ' fn
 
-awk '/>/{close(x);x="S"++i".fa";}{print > x;}' ${fn}.fa
+awk '/>/{close(x);x="./splited/S"++i".fa";}{print > x;}' ${fn}.fa
 
 for file in ./splited/*.fa
 do
