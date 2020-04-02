@@ -1,14 +1,23 @@
+import com.sun.istack.internal.localization.NullLocalizable;
+
 import java.io.*;
 import java.util.*;
 
 public class Main {
 
-    public static void writeToFile(Map<String, String> result, Map<String,
+    static void writeToFile(String file, Map<String, String> result, Map<String,
             Integer> status, Map<String, Integer> collection) throws IOException {
-
         int num = result.size();
         int count = 0;
-        FileWriter stream = new FileWriter("motif.txt");
+        FileWriter stream;
+        if(file.equals("hairpin.dot")) {
+            stream = new FileWriter("motif.txt");
+        }else if(file.equals("mutated.dot")){
+            stream = new FileWriter("m_motif.txt");
+        }else{
+            stream = null;
+        }
+        assert stream != null;
         BufferedWriter out = new BufferedWriter(stream);
         Iterator<Map.Entry<String, String>> it = result.entrySet().iterator();
         while (it.hasNext() && count < num){
@@ -18,11 +27,17 @@ public class Main {
         }
         out.close();
 
-        int nu = status.size();
+
 //        System.out.println(status.size());
 //        System.out.println(status);
+        int nu = status.size();
         int cou = 0;
-        FileWriter n_stream = new FileWriter("status.txt");
+        FileWriter n_stream;
+        if(file.equals("hairpin.dot")) {
+            n_stream = new FileWriter("status.txt");
+        }else {
+            n_stream = new FileWriter("m_status.txt");
+        }
         BufferedWriter n_out = new BufferedWriter(n_stream);
         Iterator<Map.Entry<String, Integer>> n_it = status.entrySet().iterator();
         while (n_it.hasNext() && cou < nu){
@@ -34,7 +49,12 @@ public class Main {
 
         int number = collection.size();
         int coun = 0;
-        FileWriter m_stream = new FileWriter("collection.txt");
+        FileWriter m_stream;
+        if(file.equals("hairpin.dot")) {
+            m_stream = new FileWriter("collection.txt");
+        }else {
+            m_stream = new FileWriter("m_collection.txt");
+        }
         BufferedWriter output = new BufferedWriter(m_stream);
         Iterator<Map.Entry<String, Integer>> it_c = collection.entrySet().iterator();
         while (it_c.hasNext() && coun < number){
@@ -152,7 +172,28 @@ public class Main {
 
 
     public static void main(String[] args) throws IOException {
-//        for (String key: RNA.keySet()) {
+
+        Dictionary dictionary = new Dictionary("hairpin.dot");
+        Map<String, String> result = dictionary.getRNAMap();
+        Map<String, Integer> status = dictionary.getMotifToNum();
+        Map<String, Integer> collection = dictionary.getCollection();
+        writeToFile("hairpin.dot",result, status, collection);
+
+        Dictionary m_dictionary = new Dictionary("mutated.dot");
+        Map<String, String> m_result = m_dictionary.getRNAMap();
+        Map<String, Integer> m_status = m_dictionary.getMotifToNum();
+        Map<String, Integer> m_collection = m_dictionary.getCollection();
+        writeToFile("mutated.dot",m_result, m_status, m_collection);
+
+//        StringBuilder makeString = new StringBuilder();
+//        String fix = "Num motif in human miRNA: ";
+        System.out.println("Enter 1 for input motif，enter 2 for input miRNA name, or enter q to exit : ");
+        Scanner myObj = new Scanner(System.in);  // Create a Scanner object
+        String type = myObj.nextLine();  // Read user input
+        System.out.println("Please Enter Sequence");
+        String input = myObj.nextLine();  // Read user input
+        options(type, input, result, status); // options for search
+        //        for (String key: RNA.keySet()) {
 //            result.put(key, a.motifMaker(a.motif(RNA.get(key),dot.get(key))));
 //        }
 //        result.forEach((k, v) -> {
@@ -190,47 +231,6 @@ public class Main {
 
 //        System.out.println(Motif.RNADecomposer(RNA, dot));
 //        System.out.println("haha");
-
-
-
-        Dictionary dictionary = new Dictionary("hairpin.dot");
-        Map<String, String> result = dictionary.getRNAMap();
-        Map<String, Integer> status = dictionary.getMotifToNum();
-        Map<String, Integer> collection = dictionary.getCollection();
-//        int num = result.size();
-//        int count = 0;
-//        FileWriter stream = new FileWriter("motif.txt");
-//        BufferedWriter out = new BufferedWriter(stream);
-//        Iterator<Map.Entry<String, String>> it = result.entrySet().iterator();
-//        while (it.hasNext() && count < num){
-//            Map.Entry<String, String> pairs = it.next();
-//            out.write(pairs.getKey() + "\n" + pairs.getValue()  + "\n");
-//            count++;
-//        }
-//        out.close();
-//
-//        int nu = status.size();
-//        System.out.println(status.size());
-//        System.out.println(status);
-//        int cou = 0;
-//        FileWriter n_stream = new FileWriter("status.txt");
-//        BufferedWriter n_out = new BufferedWriter(n_stream);
-//        Iterator<Map.Entry<String, Integer>> n_it = status.entrySet().iterator();
-//        while (n_it.hasNext() && cou < nu){
-//            Map.Entry<String, Integer> pairs = n_it.next();
-//            n_out.write(pairs.getKey() + ":" + pairs.getValue()  + "\n");
-//            cou++;
-//        }
-//        n_out.close();
-        writeToFile(result, status, collection);
-
-//        StringBuilder makeString = new StringBuilder();
-//        String fix = "Num motif in human miRNA: ";
-        System.out.println("Enter 1 for input motif，enter 2 for input miRNA name, or enter q to exit : ");
-        Scanner myObj = new Scanner(System.in);  // Create a Scanner object
-        String type = myObj.nextLine();  // Read user input
-        System.out.println("Please Enter Sequence");
-        String input = myObj.nextLine();  // Read user input
 //
 //        label:
 //        while (true) {
@@ -284,6 +284,5 @@ public class Main {
 //                    break;
 //            }
 //        }
-        options(type, input, result, status);
     }
 }
