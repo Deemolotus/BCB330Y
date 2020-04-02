@@ -84,7 +84,7 @@ public class UserInterface {
             resultDisplay.setText("Loading " + selectedFile.getName());
 
             try{
-            Main.writeToFile(result, status, collection);
+            Main.writeToFile("hairpin.dot",result, status, collection);
             } catch (IOException e){
                 resultDisplay.setText("Fail to write to file");
             }

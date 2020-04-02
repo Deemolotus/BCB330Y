@@ -179,7 +179,7 @@ public class Main {
         Map<String, Integer> collection = dictionary.getCollection();
         writeToFile("hairpin.dot",result, status, collection);
 
-        Dictionary m_dictionary = new Dictionary("mutated.dot");
+        Dictionary m_dictionary = new Dictionary("mutated_mRNA.dot");
         Map<String, String> m_result = m_dictionary.getRNAMap();
         Map<String, Integer> m_status = m_dictionary.getMotifToNum();
         Map<String, Integer> m_collection = m_dictionary.getCollection();
