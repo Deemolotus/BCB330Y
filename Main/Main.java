@@ -5,6 +5,28 @@ import java.util.*;
 
 public class Main {
 
+    private static void compare(Map<String, Integer> status, Map<String, Integer> mutated_status) throws IOException {
+        int size = mutated_status.size();
+        int count = 0;
+        FileWriter stream = new FileWriter("compare.txt");
+        BufferedWriter out = new BufferedWriter(stream);
+        Iterator<Map.Entry<String, Integer>> it = mutated_status.entrySet().iterator();
+        while (it.hasNext() && count < size){
+            Map.Entry<String, Integer> pairs = it.next();
+            if(status.containsKey(pairs.getKey())){
+                int temp;
+                temp = mutated_status.get(pairs.getKey()) - status.get(pairs.getKey());
+                if (temp != 0){
+                    out.write(pairs.getKey() + ":" + temp + "\n");
+                }
+            }else {
+                out.write(pairs.getKey() + ":" + mutated_status.get(pairs.getKey()) + "*" + "\n");
+            }
+            count++;
+        }
+        out.close();
+    }
+
     static void writeToFile(String file, Map<String, String> result, Map<String,
             Integer> status, Map<String, Integer> collection) throws IOException {
         int num = result.size();
@@ -78,8 +100,8 @@ public class Main {
         m_out.close();*/
     }
 
-    public static StringBuilder options(String type, String input, Map<String, String> result,
-                                        Map<String, Integer> status){
+    static StringBuilder options(String type, String input, Map<String, String> result,
+                                 Map<String, Integer> status){
 
         StringBuilder makeString = new StringBuilder();
         String fix = "Num motif in human miRNA: ";
@@ -184,6 +206,8 @@ public class Main {
         Map<String, Integer> m_status = m_dictionary.getMotifToNum();
         Map<String, Integer> m_collection = m_dictionary.getCollection();
         writeToFile("mutated.dot",m_result, m_status, m_collection);
+
+        compare(status,m_status);
 
 //        StringBuilder makeString = new StringBuilder();
 //        String fix = "Num motif in human miRNA: ";
