@@ -17,7 +17,7 @@ hairpin_other
 hairpin_3
 0
 3_Bulge
-2
+1322
 hairpin
 1917
 hairpin_5

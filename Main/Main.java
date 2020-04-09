@@ -196,13 +196,13 @@ public class Main {
     public static void main(String[] args) throws IOException {
 
         Dictionary dictionary = new Dictionary("hairpin.dot");
-        Map<String, String> result = dictionary.getRNAMap();
+        Map<String, String> result = dictionary.getMotifMap();
         Map<String, Integer> status = dictionary.getMotifToNum();
         Map<String, Integer> collection = dictionary.getCollection();
         writeToFile("hairpin.dot",result, status, collection);
 
         Dictionary m_dictionary = new Dictionary("mutated_mRNA.dot");
-        Map<String, String> m_result = m_dictionary.getRNAMap();
+        Map<String, String> m_result = m_dictionary.getMotifMap();
         Map<String, Integer> m_status = m_dictionary.getMotifToNum();
         Map<String, Integer> m_collection = m_dictionary.getCollection();
         writeToFile("mutated.dot",m_result, m_status, m_collection);
@@ -211,6 +211,7 @@ public class Main {
 
 //        StringBuilder makeString = new StringBuilder();
 //        String fix = "Num motif in human miRNA: ";
+        System.out.println(result);
         System.out.println("Enter 1 for input motif，enter 2 for input miRNA name, or enter q to exit : ");
         Scanner myObj = new Scanner(System.in);  // Create a Scanner object
         String type = myObj.nextLine();  // Read user input

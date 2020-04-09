@@ -105,7 +105,7 @@ class Dictionary {
                 } else {
                     b3nto += status.get(key);
                 }
-                count_3bulge = status.get(key);
+                count_3bulge += status.get(key);
             } else if (key.charAt(key.length() - 1) == ')' && key.charAt(key.length() - 5) == '-') {
                 if (key.length() - 8 >= 0 && key.charAt(key.length() - 8) == ')') {
                     b5nt1 += status.get(key);
