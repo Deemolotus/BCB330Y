@@ -211,7 +211,7 @@ public class Main {
 
 //        StringBuilder makeString = new StringBuilder();
 //        String fix = "Num motif in human miRNA: ";
-        System.out.println(result);
+//        System.out.println(result);
         System.out.println("Enter 1 for input motif，enter 2 for input miRNA name, or enter q to exit : ");
         Scanner myObj = new Scanner(System.in);  // Create a Scanner object
         String type = myObj.nextLine();  // Read user input
