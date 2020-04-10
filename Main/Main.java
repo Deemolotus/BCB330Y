@@ -5,28 +5,6 @@ import java.util.*;
 
 public class Main {
 
-    private static void compare(Map<String, Integer> status, Map<String, Integer> mutated_status) throws IOException {
-        int size = mutated_status.size();
-        int count = 0;
-        FileWriter stream = new FileWriter("compare.txt");
-        BufferedWriter out = new BufferedWriter(stream);
-        Iterator<Map.Entry<String, Integer>> it = mutated_status.entrySet().iterator();
-        while (it.hasNext() && count < size){
-            Map.Entry<String, Integer> pairs = it.next();
-            if(status.containsKey(pairs.getKey())){
-                int temp;
-                temp = mutated_status.get(pairs.getKey()) - status.get(pairs.getKey());
-                if (temp != 0){
-                    out.write(pairs.getKey() + ":" + temp + "\n");
-                }
-            }else {
-                out.write(pairs.getKey() + ":" + mutated_status.get(pairs.getKey()) + "*" + "\n");
-            }
-            count++;
-        }
-        out.close();
-    }
-
     static void writeToFile(String file, Map<String, String> result, Map<String,
             Integer> status, Map<String, Integer> collection) throws IOException {
         int num = result.size();
@@ -192,22 +170,48 @@ public class Main {
 
     }*/
 
+//    private static void compare(Map<String, Integer> status, Map<String, Integer> mutated_status) throws IOException {
+//        int size = mutated_status.size();
+//        int count = 0;
+//        FileWriter stream = new FileWriter("compare.txt");
+//        BufferedWriter out = new BufferedWriter(stream);
+//        Iterator<Map.Entry<String, Integer>> it = mutated_status.entrySet().iterator();
+//        while (it.hasNext() && count < size){
+//            Map.Entry<String, Integer> pairs = it.next();
+//            if(status.containsKey(pairs.getKey())){
+//                int temp;
+//                temp = mutated_status.get(pairs.getKey()) - status.get(pairs.getKey());
+//                if (temp != 0){
+//                    out.write(pairs.getKey() + ":" + temp + "\n");
+//                }
+//            }else {
+//                out.write(pairs.getKey() + ":" + mutated_status.get(pairs.getKey()) + "*" + "\n");
+//            }
+//            count++;
+//        }
+//        out.close();
+//    }
 
     public static void main(String[] args) throws IOException {
 
         Dictionary dictionary = new Dictionary("hairpin.dot");
         Map<String, String> result = dictionary.getMotifMap();
+        Map<String, String> dot = dictionary.getDotMap();
         Map<String, Integer> status = dictionary.getMotifToNum();
         Map<String, Integer> collection = dictionary.getCollection();
         writeToFile("hairpin.dot",result, status, collection);
+//        System.out.println(dot);
 
         Dictionary m_dictionary = new Dictionary("mutated_mRNA.dot");
         Map<String, String> m_result = m_dictionary.getMotifMap();
+        Map<String, String> m_dot = m_dictionary.getDotMap();
         Map<String, Integer> m_status = m_dictionary.getMotifToNum();
         Map<String, Integer> m_collection = m_dictionary.getCollection();
         writeToFile("mutated.dot",m_result, m_status, m_collection);
 
-        compare(status,m_status);
+        Compare compare_dictionary = new Compare();
+        compare_dictionary.compareStatus(status,m_status);
+        compare_dictionary.createDotMap(dot, m_dot);
 
 //        StringBuilder makeString = new StringBuilder();
 //        String fix = "Num motif in human miRNA: ";
