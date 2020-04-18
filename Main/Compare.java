@@ -34,7 +34,7 @@ public class Compare {
             FileWriter stream = new FileWriter("RNAdistance/RNA" + count + ".txt");
             BufferedWriter out = new BufferedWriter(stream);
             String name = stringStringEntry.getKey().split(" {2}")[1].split(" ")[0];
-            out.write(">" + name + "\n");
+            out.write(">" + name + " [" + stringStringEntry.getValue() + "]" + "\n");
             out.write(stringStringEntry.getValue() + "\n");
             for (Map.Entry<String, String> m_pairs : mutated_dot.entrySet()) {
                 if (m_pairs.getKey().contains(name)) {
