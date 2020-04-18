@@ -38,7 +38,8 @@ public class Compare {
             out.write(stringStringEntry.getValue() + "\n");
             for (Map.Entry<String, String> m_pairs : mutated_dot.entrySet()) {
                 if (m_pairs.getKey().contains(name)) {
-                    out.write(m_pairs.getValue() + "\n");
+                    out.write(">" + m_pairs.getKey().split(" {2}")[1].split("_")[1]
+                            + " [" + m_pairs.getValue() + "] \n" + m_pairs.getValue() + "\n");
                 }
             }
             out.close();
