@@ -200,7 +200,7 @@ public class Main {
         Map<String, Integer> status = dictionary.getMotifToNum();
         Map<String, Integer> collection = dictionary.getCollection();
         writeToFile("hairpin.dot",result, status, collection);
-//        System.out.println(dot);
+//        System.out.println(result);
 
         Dictionary m_dictionary = new Dictionary("mutated_mRNA.dot");
         Map<String, String> m_result = m_dictionary.getMotifMap();
@@ -211,17 +211,18 @@ public class Main {
 
         Compare compare_dictionary = new Compare();
         compare_dictionary.compareStatus(status,m_status);
+        compare_dictionary.compareMotifs(result,m_result);
         compare_dictionary.createDotMap(dot, m_dot);
 
 //        StringBuilder makeString = new StringBuilder();
 //        String fix = "Num motif in human miRNA: ";
 //        System.out.println(result);
-        System.out.println("Enter 1 for input motif，enter 2 for input miRNA name, or enter q to exit : ");
-        Scanner myObj = new Scanner(System.in);  // Create a Scanner object
-        String type = myObj.nextLine();  // Read user input
-        System.out.println("Please Enter Sequence");
-        String input = myObj.nextLine();  // Read user input
-        options(type, input, result, status); // options for search
+//        System.out.println("Enter 1 for input motif，enter 2 for input miRNA name, or enter q to exit : ");
+//        Scanner myObj = new Scanner(System.in);  // Create a Scanner object
+//        String type = myObj.nextLine();  // Read user input
+//        System.out.println("Please Enter Sequence");
+//        String input = myObj.nextLine();  // Read user input
+//        options(type, input, result, status); // options for search
         //        for (String key: RNA.keySet()) {
 //            result.put(key, a.motifMaker(a.motif(RNA.get(key),dot.get(key))));
 //        }

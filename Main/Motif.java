@@ -33,8 +33,6 @@ class Motif {
         int motifNum = 1;
         motif.append('/');
 
-
-
         int front = 0;
         int back = miRNA.length() - 1;
 
