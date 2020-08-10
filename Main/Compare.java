@@ -5,10 +5,15 @@ import java.util.*;
 
 public class Compare {
 
-    void compareStatus(Map<String, Integer> status, Map<String, Integer> mutated_status) throws IOException {
+    void compareStatus(Map<String, Integer> status, Map<String, Integer> mutated_status, Integer a) throws IOException {
         int size = mutated_status.size();
         int count = 0;
-        FileWriter stream = new FileWriter("compare.txt");
+        FileWriter stream;
+        if(a == 0) {
+            stream = new FileWriter("compare.txt");
+        }else{
+            stream = new FileWriter("p_compare.txt");
+        }
         BufferedWriter out = new BufferedWriter(stream);
         Iterator<Map.Entry<String, Integer>> it = mutated_status.entrySet().iterator();
         while (it.hasNext() && count < size){
@@ -27,15 +32,25 @@ public class Compare {
         out.close();
     }
 
-    void compareMotifs(Map<String, String> result, Map<String, String> mutated_result) throws IOException {
+    void compareMotifs(Map<String, String> result, Map<String, String> mutated_result, Integer a) throws IOException {
         int size = mutated_result.size();
         int count = 0;
-        FileWriter stream = new FileWriter("motif_result.txt");
+        FileWriter stream;
+        if(a == 0) {
+            stream = new FileWriter("motif_result.txt");
+        }else{
+            stream = new FileWriter("p_motif_result.txt");
+        }
         BufferedWriter out = new BufferedWriter(stream);
         Iterator<Map.Entry<String, String>> it = mutated_result.entrySet().iterator();
         while (it.hasNext() && count < size){
             Map.Entry<String, String> pairs = it.next();
-            String name = pairs.getKey().split(" {2}")[1].split("_")[0];
+            String name;
+            if(a == 0) {
+                name = pairs.getKey().split(" {2}")[1].split("_")[0];
+            }else{
+                name = pairs.getKey().split(" {2}")[1].split(",")[0];
+            }
             List motifs = new ArrayList<>(Arrays.asList(pairs.getValue().split("\n")));
             out.write(pairs.getKey() + "\n");
 

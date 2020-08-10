@@ -14,6 +14,8 @@ public class Main {
             stream = new FileWriter("motif.txt");
         }else if(file.equals("mutated.dot")){
             stream = new FileWriter("m_motif.txt");
+        }else if(file.equals("patient_mRNA.dot")){
+            stream = new FileWriter("p_motif.txt");
         }else{
             stream = null;
         }
@@ -35,6 +37,8 @@ public class Main {
         FileWriter n_stream;
         if(file.equals("hairpin.dot")) {
             n_stream = new FileWriter("status.txt");
+        }else if(file.equals("patient_mRNA.dot")){
+            n_stream = new FileWriter("p_status.txt");
         }else {
             n_stream = new FileWriter("m_status.txt");
         }
@@ -52,6 +56,8 @@ public class Main {
         FileWriter m_stream;
         if(file.equals("hairpin.dot")) {
             m_stream = new FileWriter("collection.txt");
+        }else if(file.equals("patient_mRNA.dot")){
+            m_stream = new FileWriter("p_collection.txt");
         }else {
             m_stream = new FileWriter("m_collection.txt");
         }
@@ -210,9 +216,19 @@ public class Main {
         writeToFile("mutated.dot",m_result, m_status, m_collection);
 
         Compare compare_dictionary = new Compare();
-        compare_dictionary.compareStatus(status,m_status);
-        compare_dictionary.compareMotifs(result,m_result);
+        compare_dictionary.compareStatus(status,m_status,0);
+        compare_dictionary.compareMotifs(result,m_result,0);
         compare_dictionary.createDotMap(dot, m_dot);
+
+        Dictionary p_dictionary = new Dictionary("patient_mRNA.dot");
+        Map<String, String> p_result = p_dictionary.getMotifMap();
+        Map<String, Integer> p_status = p_dictionary.getMotifToNum();
+        Map<String, Integer> p_collection = p_dictionary.getCollection();
+        writeToFile("patient_mRNA.dot",p_result, p_status, p_collection);
+
+        Compare p_compare_dictionary = new Compare();
+        p_compare_dictionary.compareStatus(status,p_status,1);
+        p_compare_dictionary.compareMotifs(result,p_result,1);
 
 //        StringBuilder makeString = new StringBuilder();
 //        String fix = "Num motif in human miRNA: ";
