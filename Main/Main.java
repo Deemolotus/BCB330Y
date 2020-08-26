@@ -91,7 +91,7 @@ public class Main {
         String fix = "Num motif in human miRNA: ";
         //Scanner myObj = new Scanner(System.in);  // Create a Scanner object
         //System.out.println("Enter 1 for input motif，enter 2 for input miRNA name, or enter q to exit : ");
-       // String number = myObj.nextLine();  // Read user input
+        // String number = myObj.nextLine();  // Read user input
 
         if (input.length() <= 0){ //If invalid input
             type = "null";
@@ -222,6 +222,7 @@ public class Main {
 
         Dictionary p_dictionary = new Dictionary("patient_mRNA.dot");
         Map<String, String> p_result = p_dictionary.getMotifMap();
+        Map<String, String> p_dot = p_dictionary.getDotMap();
         Map<String, Integer> p_status = p_dictionary.getMotifToNum();
         Map<String, Integer> p_collection = p_dictionary.getCollection();
         writeToFile("patient_mRNA.dot",p_result, p_status, p_collection);
@@ -229,7 +230,7 @@ public class Main {
         Compare p_compare_dictionary = new Compare();
         p_compare_dictionary.compareStatus(status,p_status,1);
         p_compare_dictionary.compareMotifs(result,p_result,1);
-
+        p_compare_dictionary.pCreateDotMap(dot, p_dot);
 //        StringBuilder makeString = new StringBuilder();
 //        String fix = "Num motif in human miRNA: ";
 //        System.out.println(result);

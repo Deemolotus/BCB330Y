@@ -96,4 +96,24 @@ public class Compare {
         }
     }
 
+    void pCreateDotMap(Map<String, String> normal_dot, Map<String, String> mutated_dot) throws IOException{
+        int count = 0;
+        for (Map.Entry<String, String> stringStringEntry : normal_dot.entrySet()) {
+            FileWriter stream = new FileWriter("P_RNAdistance/RNA" + count + ".txt");
+            BufferedWriter out = new BufferedWriter(stream);
+            String name = stringStringEntry.getKey().split(" {2}")[1].split(" ")[0];
+            out.write(">" + name + " [" + stringStringEntry.getValue() + "]" + "\n");
+            out.write(stringStringEntry.getValue() + "\n");
+            for (Map.Entry<String, String> m_pairs : mutated_dot.entrySet()) {
+                if (m_pairs.getKey().contains(name)) {
+                    out.write(">" + m_pairs.getKey().split(" {2}")[1].split(",")[1]
+                            + " [" + m_pairs.getValue() + "] \n" + m_pairs.getValue() + "\n");
+                }
+            }
+            out.close();
+            count++;
+        }
+    }
+
 }
+
